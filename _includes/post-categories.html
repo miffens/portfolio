@@ -7,9 +7,15 @@
         {% assign has_categories = true %}
         <li class="item  item--post">
           <article class="article  article--post  typeset">
-            <h3><a href="{{ site.baseurl }}{{ page.url }}">{{ page.title }}</a></h3>
-            {% include post-meta.html %}
-            {{ page.excerpt | truncatewords: 60 | markdownify }}
+            {% if page.featured_image %}
+              <a href="{{ site.baseurl }}{{ page.url }}">
+                <img class="featured-image" src="{{ page.featured_image }}" alt="{{ page.image_alt }}">
+              </a>
+            {% endif %}
+            <div class="post-details">
+              <h3><a href="{{ site.baseurl }}{{ page.url }}">{{ page.title }}</a></h3>
+              {% include post-meta.html %}
+            </div>
           </article>
         </li>
       {% endfor %}

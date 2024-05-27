@@ -1,3 +1,3 @@
 <div class="video">
-  <iframe src="https://www.youtube.com/embed/{{ include.id }}" frameborder="0" allowfullscreen title="{{ include.title | default: "Video" }}"></iframe>
+  <video src="{{ include.id }}" controls title="{{ include.title | default: 'Video' }}"></video>
 </div>

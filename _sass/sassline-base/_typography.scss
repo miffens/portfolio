@@ -22,6 +22,7 @@ body {
 // Links.
 a {
   color: $linkColour;
+  font-weight: bold;
   text-decoration: none;
   transition: color .1s, background-color .1s;
 
@@ -34,19 +35,13 @@ a {
 // Styles for typeset text.
 .typeset {
 
-  // Nice underlines for text links.
   p a, li a {
-    background-image: linear-gradient(to bottom,rgba(0, 0, 0, 0) 50%,$linkColour 50%);
-    background-position: 0 93%;
-    background-repeat: repeat-x;
-    background-size: 100% 0.15rem;
-    text-shadow: 0.1rem 0 $backgroundColour,
-                 0.15rem 0 $backgroundColour,
-                -0.1rem 0 $backgroundColour,
-                -0.15rem 0 $backgroundColour;
+    text-decoration: underline 0.15em;
+    text-decoration-color: transparent;
+    transition: text-decoration-color 300ms;
 
     &:hover, &:active, &:focus {
-      background-image: linear-gradient(to bottom,rgba(0, 0, 0, 0) 50%,$hoverColour 50%);
+      text-decoration-color: inherit;
     }
   }
 
@@ -64,6 +59,10 @@ a {
     font-feature-settings: 'dlig', 'liga', 'lnum', 'kern';
     font-style: normal;
     font-weight: map-get($headingtype, bold);
+
+    a {
+      color: $headingColour;
+    }
   }
 
   // Heading level 1.
